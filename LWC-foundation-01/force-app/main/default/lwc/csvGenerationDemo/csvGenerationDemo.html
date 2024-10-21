@@ -1,0 +1,51 @@
+<template>
+    <lightning-card title="CSV Generation Demo">
+        <div class="slds-var-m-around_medium">
+            <template if:true={accountData}>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                        <tr class="slds-text-title_caps">
+                            <th scope="col">
+                                <div class="slds-truncate" title="Account ID">Account ID</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Account Name">Account Name</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Phone">Phone</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Industry">Industry</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={accountData} for:item="account">
+                            <tr key={account.Id}>
+                                <td>
+                                    <div class="slds-truncate" title={account.Id}>{account.Id}</div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate" title={account.Name}>{account.Name}</div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate" title={account.Phone}>{account.Phone}</div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate" title={account.Industry}>{account.Industry}</div>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+            <template if:false={accountData}>
+                <p>No account data available.</p>
+            </template>
+        </div>
+        
+        <div class="slds-var-m-around_medium slds-text-align_center">
+            <lightning-button label="Download CSV" onclick={csvGenerator} variant="brand"></lightning-button>
+        </div>
+    </lightning-card>
+</template>

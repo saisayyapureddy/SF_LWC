@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Account Information" icon-name="standard:account">
+        <div class="slds-box slds-theme_default slds-var-m-around_medium custom-background">
+            <!-- Check if accountData has values -->
+            <template if:true={accountData}>
+                <ul class="slds-list_dotted slds-m-around_medium">
+                    <li class="slds-m-bottom_small">
+                        <strong>Name:</strong> {accountData.Name.value}
+                    </li>
+                    <li class="slds-m-bottom_small">
+                        <strong>Owner Name:</strong> {accountData.Owner.displayValue}
+                    </li>
+                    <li class="slds-m-bottom_small">
+                        <strong>Type:</strong> {accountData.Type.value}
+                    </li>
+                    <li class="slds-m-bottom_small">
+                        <strong>Annual Revenue:</strong> {accountData.AnnualRevenue.value}
+                    </li>
+                </ul>
+            </template>
+
+            <!-- Display error if accountData is not available -->
+            <template if:false={accountData}>
+                <p class="slds-text-color_error">No account data available</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

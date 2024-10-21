@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Query selector Demo">
+        <div class="slds-var-m-around_medium">
+            <h1>Hello this component is to explain about query selector </h1>
+            <!-- <lightning-button variant="brand" onclick={fetchHandler}>Fetch</lightning-button> -->
+            <template for:each={users} for:item="user">
+                <div class="name" key={user} title={title}>
+                    {user}
+                </div>
+
+            </template>
+            <!-- innertext will come from javascrip using innerHtml -->
+            <div class="manualDom"></div>
+            <button class="btn-success" onclick={fetchHandler}>Fetch</button>
+
+        </div>
+
+    </lightning-card>
+
+</template>

@@ -1,0 +1,50 @@
+<template>
+    <lightning-card title="Get object Info adaptor">
+        <div class="slds-var-m-around_medium">
+
+            <template if:true={objectInfo.data}>
+
+                <p> defaultRecordTypeId: - {objectInfo.data.defaultRecordTypeId}</p>
+                <p> Object api name : - {objectInfo.data.apiName}</p>
+            </template>
+
+        </div>
+
+    </lightning-card>
+
+    <div class="slds-var-p-bottom_medium"></div>
+    <lightning-card title="Get Multiple Object Info Adapter">
+        <div class="slds-var-m-around_medium">
+    
+            <!-- Check if we have object info results -->
+            <template if:true={objResult}>
+                <div class="slds-grid slds-wrap slds-gutters">
+    
+                    <!-- Iterate through the object infos -->
+                    <template for:each={objResult.results} for:item="obj">
+                        <div key={obj.result.apiName} class="slds-col slds-size_1-of-3 slds-p-around_small">
+                            <div class="slds-box slds-box_x-small slds-theme_default">
+                                <div class="slds-text-heading_medium slds-m-bottom_small">{obj.result.apiName}</div>
+                                <div class="slds-text-body_regular">Default Record Type ID: 
+                                    <span class="slds-text-color_success">{obj.result.defaultRecordTypeId}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+    
+                </div>
+            </template>
+    
+            <!-- Show an error if something went wrong -->
+            <template if:true={error}>
+                <div class="slds-text-color_error slds-text-align_center">
+                    Error fetching object information: {error}
+                </div>
+            </template>
+    
+        </div>
+    </lightning-card>
+    
+    
+    
+</template>

@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,lightning:isUrlAddressable"
+    access="global">
+
+    <aura:attribute name="id" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+
+    <lightning:card title="I am aura">
+        <div class="slds-var-m-around_medium">
+            <p>I am Target Aura component and invoked from LWC and my id -{!v.id}</p>
+        </div>
+
+    </lightning:card>
+
+
+
+
+</aura:component>

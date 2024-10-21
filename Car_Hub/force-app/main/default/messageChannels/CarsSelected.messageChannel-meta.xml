@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata" fqn="CarMessageChannel">
+    <isExposed>true</isExposed>
+    <masterLabel>CarsSelected</masterLabel>
+    <description>This channel is used to send record id from car tile to car card </description>
+    <lightningMessageFields>
+        <description>Car selected</description>
+        <fieldName>carId</fieldName>
+    </lightningMessageFields>
+</LightningMessageChannel>

@@ -1,0 +1,63 @@
+<apex:page lightningStylesheets="true">
+    <apex:slds/>
+
+    <div class="slds-scope">
+        <div class="slds-p-around_small">
+            <label>Enter message to publish</label>
+            <input type="text" id="messageField" class="slds-input" />
+
+            <!-- Properly formatted divs with class attribute -->
+            <div class="slds-m-around_small"></div>
+            <div class="slds-m-around_small slds-p-bottom_small">
+                <button class="slds-button slds-button_neutral" onclick="publishHandler()">Publish</button>
+                <button class="slds-button slds-button_neutral" onclick="subscribeHandler()">Subscribe</button>
+                <button class="slds-button slds-button_neutral" onclick="unsubscribeHandler()">UnSubscribe</button>
+            </div>
+
+            <p>Message Received -</p> <strong id="recievedMessage"></strong>
+            <!-- <div id="recievedMessage"></div> -->
+
+        </div>
+
+    </div>
+    
+    <script>
+        let sampleMsgChannel = "{!$MessageChannel.SampleMessageChannel__c}";
+        let subscription;
+
+        // Publish function
+        function publishHandler() {
+            let con = document.getElementById("messageField");
+            let msg = con.value;
+            let message = {
+                lmsData: {
+                    value: msg  // Use msg, not message, to prevent confusion
+                }
+            }
+
+            sforce.one.publish(sampleMsgChannel, message);
+        }
+
+        // Subscribe function
+        function subscribeHandler() {
+            if (!subscription) {
+                subscription = sforce.one.subscribe(sampleMsgChannel, msgHandler, { scope: "APPLICATION" });
+            }
+        }
+
+        // Message handler
+        function msgHandler(mess) {
+            let recievedMessage = document.getElementById('recievedMessage');
+            recievedMessage.innerHTML = mess && mess.lmsData.value ? mess.lmsData.value : 'No data found';
+        }
+
+        // Unsubscribe function
+        function unsubscribeHandler() {
+            if (subscription) {
+                sforce.one.unsubscribe(subscription);
+                subscription = null;
+            }
+        }
+    </script>
+
+</apex:page>

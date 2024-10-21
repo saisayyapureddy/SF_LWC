@@ -1,0 +1,32 @@
+<template>
+    <lightning-card  title="Lightning Card">
+        <div class="slds-m-top_medium">
+            <lightning-avatar src="https://www.lightningdesignsystem.com/assets/images/avatar2.jpg"></lightning-avatar>
+            <lightning-input-address
+               address-label="Address"
+               street-label="Street"
+               city-label="City"
+               country-label="Country"
+               province-label="Province"
+               postal-code-label="PostalCode"
+               street="Park Meadows St"
+               city="Denver"
+               country="US"
+               province="Colorado"
+               postal-code="80124"
+               required
+               field-level-help="Help Text">
+            </lightning-input-address>
+
+            
+            <p>
+                {title}
+            </p>
+            <p>
+                This component is created from slaesfoce LWC Builder UI extension 
+                and is used to create a Lightning Card component.
+            </p>
+
+        </div>
+    </lightning-card>
+</template>

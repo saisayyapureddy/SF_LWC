@@ -1,0 +1,64 @@
+<template>
+    <lightning-card title="Client side filtering in LWC">
+        <div class="slds-p-around_medium">
+
+            <lightning-layout>
+                <!-- Filter by Combobox -->
+                <lightning-layout-item padding="around-small" size="4">
+                    <lightning-combobox label="Filter by" 
+                                        value={filterValue} 
+                                        options={filterOptions} 
+                                        onchange={filterHandler}>
+                    </lightning-combobox>
+                </lightning-layout-item>
+
+                <!-- Filter Input -->
+                <lightning-layout-item padding="around-small" size="4">
+                    <lightning-input label="Filter" 
+                                     type="text" 
+                                     onkeyup={filterData}>
+                    </lightning-input>
+                </lightning-layout-item>
+
+                <!-- Sort By Combobox aligned to the right -->
+                <lightning-layout-item padding="around-small" size="2" class="slds-col_bump-left">
+                    <lightning-combobox label="Sort By" 
+                                        value={sortedValue} 
+                                        options={sortedOptions} 
+                                        onchange={sortHandler}>
+                    </lightning-combobox>
+                </lightning-layout-item>
+            </lightning-layout>
+            <table>
+                <thead>
+                    <tr>
+                        <template for:each={heading} for:item="head">
+                            <th key={head}>{head}</th>
+                        </template>
+                    </tr>
+                   
+
+                </thead>
+                <tbody>
+                    <template for:each={tableFilteredData} for:item="data">
+
+                        <tr key={data.Id}>
+                            <td>{data.Id}</td>
+                            <td>{data.Name}</td>
+                            <td>{data.Phone}</td>
+                            <td>{data.Email}</td>
+                        </tr>
+                    </template>
+
+                </tbody>
+            </table>
+
+        </div>
+
+    </lightning-card>
+
+</template> 
+
+
+
+

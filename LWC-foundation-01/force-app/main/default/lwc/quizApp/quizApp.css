@@ -1,0 +1,9 @@
+.quiz-container {
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Gradient background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    color: #333;
+}

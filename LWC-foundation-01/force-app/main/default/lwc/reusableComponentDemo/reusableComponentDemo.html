@@ -1,0 +1,62 @@
+<template>
+    <!-- <lightning-card>
+        <lightning-button label="New" slot="actions"></lightning-button>
+        <p class="slds-p-horizontal_small">Card Body (custom component)</p>
+        <p slot="footer">Card Footer</p>
+    </lightning-card> -->
+
+    <div class="slds-var-m-bottom_medium"></div>
+    <!-- Full card -->
+    <lightning-card>
+        <c-custom-lightning-card-component>
+
+            <h2 slot="header"> Header will come here </h2>
+            <lightning-button label="New" slot="action"></lightning-button>
+            <p class="slds-p-horizontal_small">Card Body (custom component)</p>
+            <p slot="footer">Card Footer</p>
+        </c-custom-lightning-card-component>
+
+    </lightning-card>
+
+    <div class="slds-var-m-bottom_medium"></div>
+     <!-- without footer -->
+    <lightning-card>
+        <c-custom-lightning-card-component>
+
+            <h2 slot="header">This card is without footer</h2>
+            <lightning-button label="New" slot="action"></lightning-button>
+            <p class="slds-p-horizontal_small">Card Body (custom component)</p>
+            <!-- <p slot="footer">Card Footer</p> -->
+        </c-custom-lightning-card-component>
+
+    </lightning-card>
+
+    
+    <div class="slds-var-m-bottom_medium"></div>
+    <!-- Without action -->
+    <lightning-card>
+        <c-custom-lightning-card-component>
+
+            <h2 slot="header"> This card is without action</h2>
+            <!-- <lightning-button label="New" slot="action"></lightning-button> -->
+            <p class="slds-p-horizontal_small">Card Body (custom component)</p>
+            <p slot="footer">Card Footer</p>
+        </c-custom-lightning-card-component>
+
+    </lightning-card>
+
+    <div class="slds-var-m-bottom_medium"></div>
+    <!-- Only title  -->
+    <lightning-card>
+        <c-custom-lightning-card-component>
+
+            <h2 slot="header"> Only title </h2>
+            <!-- <lightning-button label="New" slot="action"></lightning-button>
+            <p class="slds-p-horizontal_small">Card Body (custom component)</p>
+            <p slot="footer">Card Footer</p> -->
+        </c-custom-lightning-card-component>
+
+    </lightning-card>
+
+
+</template>

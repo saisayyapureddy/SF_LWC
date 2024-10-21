@@ -1,0 +1,31 @@
+.card-container {
+    background-color: #f4f6f9; /* Light background for contrast */
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.slds-section__title h3 {
+    font-size: 1.2rem;
+    color: #1a3e7c; /* Custom color for section titles */
+    margin-bottom: 10px;
+}
+
+.slds-section__content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.slds-output-field {
+    margin-bottom: 15px; /* Space between fields */
+}
+
+section{
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+    text-transform: uppercase;
+    background: #ecebea;
+    border-radius: 5px;
+    padding: 0.25rem;
+}

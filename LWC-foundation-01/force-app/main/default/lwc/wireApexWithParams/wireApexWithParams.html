@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Apex method with params">
+        <div class="slds-var-m-around_small"></div>
+
+        <!-- Combobox for selecting the type -->
+        <lightning-combobox
+            name="objectType"
+            label="Select Type"
+            value={selectedType}
+            options={acntOptions}  
+            onchange={change}>
+        </lightning-combobox>
+
+        <!-- Display account data -->
+        <div class="slds-var-m-around_medium">
+            <template if:true={acntData.data}>
+                <template for:each={acntData.data} for:item="acnt">
+                    <div class="slds-box slds-box__xx-small" key={acnt.Id}>  <!-- Fixed key -->
+                        <p>Name: <strong>{acnt.Name}</strong></p>
+                        <p>Industry: <strong>{acnt.Industry}</strong></p>
+                        <p>Type: <strong>{acnt.Type}</strong></p>
+                    </div>
+                </template>
+            </template>
+            <template if:true={acntData.error}>
+                <p>Error fetching account data.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

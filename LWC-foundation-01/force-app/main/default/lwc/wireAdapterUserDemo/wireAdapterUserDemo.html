@@ -1,0 +1,46 @@
+<template>
+    <lightning-card title="Get UserDetail using wire adapter Function">
+        <div class="slds-var-m-around_medium">
+            <p>User Id </p>
+             <p><strong>{userId}</strong></p>
+             <div class="slds-var-p-bottom_small"></div>
+
+             <template if:true={details}>
+                <ul>
+                     <li>Name - <strong>{details.Name.value}</strong></li>
+                     <li>Email - <strong>{details.Email.value}</strong></li>
+                     <li>Profile Id - <strong>{details.ProfileId.value}</strong></li>
+                </ul>
+             </template>
+
+
+             
+             
+             
+        </div>
+
+    </lightning-card>
+    <div class="slds-var-p-bottom_medium"></div>
+
+    <lightning-card title="Get UserDetail using wire adapter property">
+        <div class="slds-var-m-around_medium">
+            <p>User Id </p>
+             <p><strong>{userId}</strong></p>
+             <div class="slds-var-p-bottom_small"></div>
+
+             <template if:true={userDetails.data}>
+                <ul>
+                     <li>Name - <strong>{userDetails.data.fields.Name.value}</strong></li>
+                     <li>Email - <strong>{userDetails.data.fields.Email.value}</strong></li>
+                     <li>Profile Id - <strong>{userDetails.data.fields.ProfileId.value}</strong></li>
+                </ul>
+             </template>
+
+
+             
+             
+             
+        </div>
+
+    </lightning-card>
+</template>

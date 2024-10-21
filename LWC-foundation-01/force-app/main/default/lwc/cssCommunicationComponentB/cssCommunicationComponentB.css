@@ -1,0 +1,17 @@
+
+/* this  host style applied for entire child element declared in parent component */
+:host{
+    display: block;
+    font-size: large;
+    background-color: rgb(16, 166, 240);
+    color: blue;
+}
+
+/* if you have two childs rendered in parent you can add individual style to each component using class */
+:host(.second){
+
+    display: block;
+    font-size: large;
+    background-color: rgb(237, 214, 13);
+    color: rgb(223, 16, 85);
+}

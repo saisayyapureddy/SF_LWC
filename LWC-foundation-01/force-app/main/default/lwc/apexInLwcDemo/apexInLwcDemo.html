@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Calling Apex method in LWC using wire as a property">
+        <div class="slds-var-m-around_medium">
+            <template if:true={accountList.data}>
+                <template for:each={accountList.data} for:item="acnt">
+                    <div class="slds-box slds-box_x-small slds-m-bottom_medium" key={acnt.Id}>
+                        <!-- Display Account details with a box around them -->
+                        <p><strong>Account Name:</strong> {acnt.Name}</p>
+                        <p><strong>Phone:</strong> {acnt.Phone}</p>
+                        <p><strong>Industry:</strong> {acnt.Industry}</p>
+                    </div>
+                </template>
+            </template>
+            <template if:true={accountList.error}>
+                <p class="slds-text-color_error">Error fetching account data.</p>
+            </template>
+        </div>
+    </lightning-card>
+
+    <div class="slds-var-p-bottom_medium"></div>
+    <lightning-card title="Calling Apex method in LWC using wire as a Function">
+        <div class="slds-var-m-around_medium">
+            
+                <template for:each={acntDataFromFunction} for:item="acnt">
+                    <div class="slds-box slds-box_x-small slds-m-bottom_medium" key={acnt.Id}>
+                        <!-- Display Account details with a box around them -->
+                        <p><strong>Account Name:</strong> {acnt.Name}</p>
+                        <p><strong>Phone:</strong> {acnt.Phone}</p>
+                        <p><strong>Industry:</strong> {acnt.Industry}</p>
+                    </div>
+                </template>
+    
+            <template if:true={accountList.error}>
+                <p class="slds-text-color_error">Error fetching account data.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

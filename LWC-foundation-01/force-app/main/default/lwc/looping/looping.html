@@ -1,0 +1,80 @@
+<template>
+    <lightning-card title="For Each Loop" class="card">
+        <div class="slds-var-m-around_medium card">
+            <template for:each={carList} for:item="car">
+
+                <ul key={car} class="slds-has-dividers_around-space">
+                    <li class="slds-item"><strong style="word-spacing: 7px;">{car}</strong></li>
+
+                </ul>
+
+            </template>
+
+        </div>
+    </lightning-card>
+
+
+
+    <lightning-card title="Iterator loop" class="card">
+        <p class="slds-var-m-around_medium">iterator and for loop same but
+            difference is in iterator loop we can get the
+            first element and last elemet in the array
+            based on that we can do some task
+        </p>
+        <div class="slds-var-m-around_medium">
+            <template iterator:company={companyList}>
+
+                <div key={company.value.id}>
+                    <template if:true={company.first}>
+                        <div class="slds-box slds-theme_shade">
+                            <h3 class="slds-text-heading_medium">Company List</h3>
+
+                        </div>
+                    </template>
+                    <ul class="slds-has-dividers_around-space">
+                        <li class="slds-item">
+                            <strong style="word-spacing: 7px;">{company.value.companyName} </strong>
+                            and ceo is {company.value.ceo}
+                        </li>
+                    </ul>
+                    <template if:true={company.last}>
+                        <div class="slds-box slds-theme_shade">
+                            <h3 class="slds-text-heading_medium">Thank you!!</h3>
+
+                        </div>
+                    </template>
+
+
+                </div>
+
+
+
+            </template>
+
+        </div>
+    </lightning-card>
+
+
+
+
+    <lightning-card title="For each loop with array of Objects" class="card">
+        <div class="slds-var-m-around_medium card">
+            <template for:each={companyList} for:item="company">
+
+                <div key={company.id}>
+                    <ul class="slds-has-dividers_around-space">
+                        <li class="slds-item">
+                            <strong style="word-spacing: 7px;">{company.companyName} </strong>
+                            and ceo is {company.ceo}
+                        </li>
+                    </ul>
+
+                </div>
+
+
+
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

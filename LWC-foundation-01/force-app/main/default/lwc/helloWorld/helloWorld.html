@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="Two way data binding">
+        <div class="slds-m-around_medium">
+
+            <lightning-input type="text" label="Enter title" onkeyup={changeHandler}></lightning-input>
+            <div>{name} chossed {title}</div>
+        </div>
+    </lightning-card>
+
+
+    <lightning-card title="@Track usage">
+        <p class="slds-m-left_x-small">{description}</p>
+        <div class="slds-m-around_medium">
+
+            <lightning-input type="text" label="Enter City" onkeyup={AddressChange}></lightning-input>
+            <div>{address.city} is my City</div>
+        </div>
+    </lightning-card>
+    <br>
+
+    <!-- conditional rendering -->
+    <lightning-card title="Conditional Rendering">
+        <div class="slds-m-around_medium">
+
+            <lightning-button variant="brand" label="Click Me!" title="Primary action" 
+            onclick={show} class="slds-m-left_x-small">
+            </lightning-button>
+
+
+            <div class="slds-m-around_small">
+
+                <template if:true={isShow}>
+                    <div>You are in right place and you will be getting correct data</div>
+                 </template>
+     
+                 <template if:false={isShow}>
+                     <div>You can't see the exact data, if want please click above button</div>
+                  </template>
+
+            </div>
+            
+            
+
+        </div>
+    </lightning-card>
+
+</template>

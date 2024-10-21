@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Create record function Wire adapter ">
+        <div class="slds-var-m-around_medium">
+
+            <form>
+
+                <lightning-input label="FirstName" type="text" onchange={dataHandler} class="slds-p-bottom_medium"
+                    name="FirstName"></lightning-input>
+
+                <lightning-input label="LastName" type="text" onchange={dataHandler} class="slds-p-bottom_medium"
+                    name="LastName"></lightning-input>
+
+                <lightning-input label="Email" type="email" onchange={dataHandler} class="slds-p-bottom_medium"
+                    name="Email"></lightning-input>
+
+                <lightning-input label="Phone" type="tel" onchange={dataHandler} class="slds-p-bottom_medium"
+                    name="Phone"></lightning-input>
+
+                    <lightning-button variant="brand" label="Create Account" title="Create Account"
+                    onclick={createHandler} class="slds-p-bottom_medium"></lightning-button>
+
+            </form>
+
+        </div>
+
+    </lightning-card>
+</template>

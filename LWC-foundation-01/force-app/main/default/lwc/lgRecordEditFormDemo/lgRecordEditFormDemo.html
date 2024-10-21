@@ -1,0 +1,74 @@
+<template>
+    <lightning-card title="Create Record Using record-edit form(this also gives the custom layout benifit)">
+        <div class="slds-var-m-around_medium">
+
+            <lightning-record-edit-form
+            object-api-name={object_name}>
+
+                <lightning-messages> </lightning-messages> 
+
+                <lightning-input-field field-name={fields.accountField} ></lightning-input-field>
+                <lightning-input-field field-name={fields.nameField} ></lightning-input-field>
+                <lightning-input-field field-name={fields.emailField} ></lightning-input-field>
+                <lightning-input-field field-name={fields.titleField} ></lightning-input-field>
+                <lightning-button class="slds-m-around_x-small" label="Cancel" onclick={resteHandler}></lightning-button>
+                <lightning-button class="slds-m-around_x-small" variant="brand" type="submit" label="Save"></lightning-button>
+                <lightning-button class="slds-m-around_x-small" variant="destructive" label="Reset" onclick={resteHandler}></lightning-button>
+
+            </lightning-record-edit-form>
+        </div>
+
+    </lightning-card>
+    <div class="slds-var-p-bottom_medium"></div>
+
+
+    <lightning-card title="Edit Record Using record-edit form(this also gives the custom layout benifit)">
+        <div class="slds-var-m-around_medium">
+
+            <lightning-record-edit-form
+            record-id="003dM000005a4YZQAY"
+            object-api-name={object_name}>
+
+                <lightning-messages> </lightning-messages> 
+
+                <lightning-input-field field-name={fields.accountField} ></lightning-input-field>
+                <lightning-input-field field-name={fields.nameField} ></lightning-input-field>
+                <lightning-input-field field-name={fields.emailField} ></lightning-input-field>
+                <lightning-input-field field-name={fields.titleField} ></lightning-input-field>
+                <lightning-button class="slds-m-around_x-small" label="Cancel" onclick={resteHandler}></lightning-button>
+                <lightning-button class="slds-m-around_x-small" variant="brand" type="submit" label="Save"></lightning-button>
+                <lightning-button class="slds-m-around_x-small" variant="destructive" label="Reset" onclick={resteHandler}></lightning-button>
+
+            </lightning-record-edit-form>
+        </div>
+
+    </lightning-card>
+
+    <div class="slds-var-p-bottom_medium"></div>
+
+
+    <lightning-card title="Edit Record Using record-edit form(this also gives the custom layout benifit)">
+
+        <div class="slds-var-m-around_medium">
+            <p><strong>here used custom label names see email</strong></p>
+
+            <lightning-record-edit-form
+            record-id="003dM000005a4YZQAY"
+            object-api-name={object_name}>
+
+                <lightning-messages> </lightning-messages> 
+
+                <lightning-input-field field-name={fields.accountField} ></lightning-input-field>
+                <lightning-input-field field-name={fields.nameField} ></lightning-input-field>
+                <label class="slds-var-p-left_x-small">Enter your Email</label>
+                <lightning-input-field field-name={fields.emailField} variant="label-hidden" ></lightning-input-field>
+                <lightning-input-field field-name={fields.titleField} ></lightning-input-field>
+                <lightning-button class="slds-m-around_x-small" label="Cancel" onclick={resteHandler}></lightning-button>
+                <lightning-button class="slds-m-around_x-small" variant="brand" type="submit" label="Save"></lightning-button>
+                <lightning-button class="slds-m-around_x-small" variant="destructive" label="Reset" onclick={resteHandler}></lightning-button>
+
+            </lightning-record-edit-form>
+        </div>
+
+    </lightning-card>
+</template>

@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Slot Demo (Transfer Markup from P2C)">
+        <div class="slds-var-m-around_medium">
+           <c-slot-demo-child-component>
+            <h4 class="slds-text-color_success" slot="name">My name is Salesdforce</h4>
+            <h4 class="slds-text-color_error" slot="age">My age is 25</h4>
+            <!-- <p slot="ft"> Hii i am footer </p> -->
+           </c-slot-demo-child-component> 
+        </div>
+        <div class="slds-var-m-around_medium"></div>
+
+        <div class="slds-var-m-around_medium">
+            <c-slot-demo-child-component>
+             <h4 class="slds-text-color_success" slot="name">My name is Salesdforce</h4>
+             <h4 class="slds-text-color_error" slot="age">My age is 25</h4>
+             <p class="slds-text-color_inverse" slot="ft"> Hii i am footer </p>
+            </c-slot-demo-child-component> 
+         </div>
+
+    </lightning-card>
+</template>

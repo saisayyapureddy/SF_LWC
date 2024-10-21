@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Child to parent communication Using Simple event">
+        <div class="slds-var-m-around_x-small"></div>
+        <lightning-button label="Show Model" variant="brand" onclick={showChildHandler} class="slds-m-around_x-small"></lightning-button>
+        <template if:true={showChild}>
+            <!-- here onclose is custom event created in child component
+            parent component is listening the event taking the 
+            action -->
+            <c-c2p-child-model-component onclose={closeHandler}></c-c2p-child-model-component>
+
+        </template>
+           <div class="slds-var-p-around_x-small">{msg}</div>
+    </lightning-card>
+    
+</template>

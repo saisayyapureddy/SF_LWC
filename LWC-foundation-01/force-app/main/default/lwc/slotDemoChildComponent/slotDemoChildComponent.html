@@ -1,0 +1,17 @@
+<template>
+    <div class="slds-var-m-around_medium">
+        <h3> Whats your name?</h3>
+          <!-- <slot></slot> unNamedslot  answer came from parent  -->
+           <slot name="name"></slot> <!--Named slot-->
+
+          <h3>Whats ur Age?</h3>
+           <slot name="age"></slot>
+           <div class="slds-var-p-around_medium"></div>
+           <footer class="slds-card__footer slds-hide">
+            <slot name="ft" onslotchange={handleFooter}></slot>
+           </footer>
+    </div>
+    
+    
+    
+</template>

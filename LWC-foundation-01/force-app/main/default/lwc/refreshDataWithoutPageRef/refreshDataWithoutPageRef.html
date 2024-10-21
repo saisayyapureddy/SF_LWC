@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Refresh Data without Page Refresh and Data Table Demo">
+        <div class="slds-var-m-around_medium">
+            <lightning-datatable
+                key-field="Id"
+                data={contacts}
+                columns={columns}
+                hide-checkbox-column
+                onsave={saveHandler}
+                draft-values={draftValues}>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

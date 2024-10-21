@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Similar Cars Information" icon-name="action:share_link">
+        <div class="slds-p-around_medium">
+            <div class="slds-align_absolute-center">
+                <!-- Button to fetch similar cars if no data is available -->
+                <template if:false={similarCars}>
+                    <lightning-button label="Fetch Similar Cars" variant="destructive" class="slds-m-bottom_medium"
+                        onclick={fetchHandler}>
+                    </lightning-button>
+                </template>
+            </div>
+
+            <!-- Displaying list of similar cars -->
+            <template for:each={similarCars} for:item="car">
+                <div key={car.Id} class="slds-box slds-m-around_small slds-shadow_small slds-p-around_medium" style="display: flex; align-items: center;">
+                    <!-- Car Image -->
+                    <div style="flex-shrink: 0; margin-right: 1.5rem;">
+                        <img src={car.Picture_URL__c} alt="Car image" class="slds-image"
+                            style="height: 140px;">
+                    </div>
+
+                    <!-- Car Name, Price, and Button on the Left Side -->
+                    <div style="flex-grow: 1;">
+                        <div class="slds-text-heading_medium slds-m-bottom_x-small">
+                            {car.Name}
+                        </div>
+                        <div class="slds-text-heading_small slds-m-bottom_medium">
+                            <lightning-formatted-number format-style="currency" currency-code="USD"
+                                value={car.MSRP__c} maximum-fraction-digits="0">
+                            </lightning-formatted-number>
+                        </div>
+
+                        <!-- View Details Button -->
+                        <lightning-button label="View Details"  variant="success" data-id={car.Id}
+                            onclick={navigateToSimilarHandler}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

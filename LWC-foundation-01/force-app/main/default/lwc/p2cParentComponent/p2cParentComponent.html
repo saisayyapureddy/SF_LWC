@@ -1,0 +1,30 @@
+<template>
+
+    <!-- in child componnentent we have properties like this   @api message;
+     @api number;
+     @api isValid;  first two properties don't have any capitala letter b/w third we have so while assigning we
+     need to follow the kanban case thats why added -and small letter after after - and 
+     by-default boolean is true if we declare only variable it will take true value only automatically  -->
+    <!-- example of simple data primitive -->
+    <c-p2c-child-alert-component message="Hey i am alert" number=20 is-valid></c-p2c-child-alert-component>
+
+    <div class="slds-m-bottom_medium"></div>
+    <!-- example of complex  data non-primitive -->
+    <c-p2c-child-carousel-component carousel-details={carouselData}></c-p2c-child-carousel-component>
+
+    <!-- example of sending data to child by perfoming action -->
+    <div class="slds-m-bottom_medium"></div>
+    
+    <lightning-card title='Parent to Child communication on action '>
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="number" name="input1" value={percentage} label="Enter Progress %" onkeyup={numberAction}></lightning-input>
+            <c-p2c-child-progressbar-action-component percentage-value={percentage}></c-p2c-child-progressbar-action-component>
+      </div>
+    </lightning-card>  
+
+    <div class="slds-m-bottom_medium"></div>
+    <!-- example of calling  child method from parent -->
+     <c-p2c-child-slider-component></c-p2c-child-slider-component>
+     <lightning-button variant="brand" label="Brand" onclick={sliderClick} class="slds-m-left_x-small"></lightning-button>
+    
+</template>

@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Get all picklist once BY wire (getPicklistValuesByRecordType)">
+        <div class="slds-var-m-around_medium">
+            
+            <lightning-combobox
+            name="account"
+            label="Account Source"
+            value={accountSource}
+            placeholder="Select Account Source"
+            options={accountSourceOptions}
+            onchange={handleChange}
+            ></lightning-combobox>
+            <p>Selected source is : {accountSource}</p>
+
+        </div>
+
+        <div class="slds-var-m-around_medium">
+        
+            <lightning-combobox
+            name="industry"
+            label="industry Source"
+            value={indSource}
+            placeholder="Select Industry"
+            options={industryOptions}
+            onchange={handleChange}
+            ></lightning-combobox>
+            <p>Selected industry  is : {indSource}</p>
+
+        </div>
+
+        <strong>Use case : If your recquirement is to get only one single picklist  use getPicklistValue adaptor 
+            if you have to get multiple picklist values then use wireGetPicklistValuesByRecordTypeId
+        </strong>
+    </lightning-card>
+</template>

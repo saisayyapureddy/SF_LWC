@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Get picklist values by Wire adapter (Account industry )">
+        <div class="slds-var-m-around_medium">
+
+            <lightning-combobox 
+                name="industry"
+                label="industry"
+                 value={industry} 
+                placeholder="Select Industry"
+                options={industryOptions} 
+                onchange={handleChange}>
+            </lightning-combobox>
+
+            <p>Selected value is: {industry}</p>
+        </div>
+
+
+
+    </lightning-card>
+
+    <div class="slds-var-p-bottom_medium"></div>
+
+    <lightning-card title="Get picklist values by Wire adapter (Account Type )">
+        <div class="slds-var-m-around_medium">
+
+            <lightning-combobox 
+                name="Type"
+                label="Type"
+                value={type} 
+                placeholder="Select Type"
+                options={typeOptions} 
+                onchange={handleTypeChange}>
+            </lightning-combobox>
+
+            <p>Selected value is: {type}</p>
+        </div>
+
+
+
+    </lightning-card>
+</template>

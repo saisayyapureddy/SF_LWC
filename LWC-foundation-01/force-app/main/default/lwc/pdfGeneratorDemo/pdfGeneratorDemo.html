@@ -1,0 +1,152 @@
+<!-- <template>
+    <div class="container" style="background: white;
+    margin: 15px 9px;
+    padding: 10px;
+    padding-bottom: 5px;">
+        <div>
+            <img src={imageUrl} alt="Invoice-img" style="height: 40px; width:150px ">
+        </div>
+        <div>
+            <div>
+                <div>Invoice #:{invoiceInfo.invoiceNumber}</div>
+                <div>Created:{invoiceInfo.invoiceCreated}</div>
+                <div>Due Date:{invoiceInfo.invoiceDueDate}</div>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <div>CompanyName #:{invoiceInfo.companyName}</div>
+                <div>Address:{invoiceInfo.address1}</div>
+                <div>PaymentTerms:{invoiceInfo.paymentTerms}</div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>Client Name #:{clientData.clientName}</div>
+                <div>clientAddress:{clientData.clientAddress}</div>
+                <div>ClientEmail:{clientData.clientEmail}</div>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <div><strong>Services</strong>></div>
+                <div><strong>Amount</strong>></div>
+            </div>
+        </div>
+        <template iterator:it={services}>
+            <div key={it.value.serviceName}>
+                <div>{it.value.serviceName}</div>
+                <div>${it.value.serviceRate}</div>
+            </div>
+            <div if:true={it.last} key={it.value.serviceName}>
+                <div><strong>Total amount : ${totalAmount}</strong></div>
+            </div>
+        </template>
+        
+        
+
+    </div>
+</template> -->
+
+
+<!-- <template>
+    <div class="container" style="background: white; margin: 15px 9px; padding: 10px; padding-bottom: 5px; font-family: Arial, sans-serif;">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src={imageUrl} alt="Invoice-img" style=" width: 150px;">
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <div style="flex: 1;">
+                <div style="font-weight: bold;">Invoice #: {invoiceInfo.invoiceNumber}</div>
+                <div>Created: {invoiceInfo.invoiceCreated}</div>
+                <div>Due Date: {invoiceInfo.invoiceDueDate}</div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <div style="font-weight: bold;">Company Name: {invoiceInfo.companyName}</div>
+            <div>Address: {invoiceInfo.address1}</div>
+            <div>Payment Terms: {invoiceInfo.paymentTerms}</div>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <div style="font-weight: bold;">Client Name: {clientData.clientName}</div>
+            <div>Client Address: {clientData.clientAddress}</div>
+            <div>Client Email: {clientData.clientEmail}</div>
+        </div>
+
+        <div style="margin-top: 20px; font-weight: bold; text-align: left;">
+            <div style="display: inline-block; width: 60%;">Services</div>
+            <div style="display: inline-block; width: 30%; text-align: right;">Amount</div>
+        </div>
+
+        <template iterator:it={services}>
+            <div key={it.value.serviceName} style="display: flex; justify-content: space-between; margin-top: 5px;">
+                <div style="width: 60%;">{it.value.serviceName}</div>
+                <div style="width: 30%; text-align: right;">${it.value.serviceRate}</div>
+            </div>
+
+            <div if:true={it.last} key={it.value.serviceName} style="margin-top: 15px; font-weight: bold; text-align: right;">
+                <div>Total Amount: ${totalAmount}</div>
+            </div>
+        </template>
+        <div class="slds-var-p_bottom-small">
+            <lightning-button label="Generate PDF" variant="brand" onclick={pdfHandler}></lightning-button>
+        </div>
+        
+    </div>
+    
+</template> -->
+
+
+<template>
+    <div class="container" style="background: white; margin: 15px 9px; padding: 10px; padding-bottom: 5px; font-family: Arial, sans-serif;">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src={imageUrl} alt="Invoice-img" style="width: 150px;">
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <div style="flex: 1;">
+                <div style="font-weight: bold;">Invoice #: {invoiceInfo.invoiceNumber}</div>
+                <div>Created: {invoiceInfo.invoiceCreated}</div>
+                <div>Due Date: {invoiceInfo.invoiceDueDate}</div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <div style="font-weight: bold;">Company Name: {invoiceInfo.companyName}</div>
+            <div>Address: {invoiceInfo.address1}</div>
+            <div>Payment Terms: {invoiceInfo.paymentTerms}</div>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <div style="font-weight: bold;">Client Name: {clientData.clientName}</div>
+            <div>Client Address: {clientData.clientAddress}</div>
+            <div>Client Email: {clientData.clientEmail}</div>
+        </div>
+
+        <!-- Header for Services and Amount -->
+        <div style="display: flex; justify-content: space-between; margin-top: 20px; font-weight: bold; text-align: left;">
+            <div style="width: 70%; text-align: left;">Services</div>
+            <div style="width: 30%; text-align: right;">Amount</div>
+        </div>
+
+        <!-- Iterating over services -->
+        <template iterator:it={services}>
+            <div key={it.value.serviceName} style="display: flex; justify-content: space-between; margin-top: 5px;">
+                <div style="width: 70%; text-align: left;">{it.value.serviceName}</div>
+                <div style="width: 30%; text-align: right;">${it.value.serviceRate}</div>
+            </div>
+
+            <div if:true={it.last} key={it.value.serviceName} style="margin-top: 15px; font-weight: bold; text-align: right;">
+                <div>Total Amount: ${totalAmount}</div>
+            </div>
+        </template>
+
+        <div class="slds-var-p_bottom-small">
+            <lightning-button label="Generate PDF" variant="brand" onclick={pdfHandler}></lightning-button>
+        </div>
+    </div>
+</template>

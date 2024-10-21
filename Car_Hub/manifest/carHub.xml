@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>CarController</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>DefaultPageTemplate_2_7_3</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>car_Card_Component</members>
+        <members>car_Filter_Component</members>
+        <members>car_Tile_Component</members>
+        <members>tile_car</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <version>62.0</version>
+</Package>

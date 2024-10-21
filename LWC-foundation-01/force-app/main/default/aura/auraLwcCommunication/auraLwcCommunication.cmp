@@ -1,0 +1,18 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="recievedMsg" type="String" />
+
+    <lightning:card title="Aura to LWC communication" class="slds-p-around_medium">
+        <div class="slds-var-p-around_small">
+            <p class="slds-text-heading_small">I am from Aura</p>
+        </div>
+
+        <div class="slds-var-p-around_medium slds-box slds-theme_default">
+            <p>{!v.recievedMsg}</p>
+        </div>
+
+        <div class="slds-var-m-around_medium">
+            <c:lwcAuraCommunication onsendmsg="{!c.handle}" msg="Hey, this data is coming from Aura to LWC">
+            </c:lwcAuraCommunication>
+        </div>
+    </lightning:card>
+</aura:component>

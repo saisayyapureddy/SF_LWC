@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Apex imperative Demo">
+        <p class="slds-p-around_small">
+            <lightning-button label="Call imperative Apex" variant="brand" onclick={handleClick}></lightning-button>
+        </p>
+        <div class="slds-var-p-bottom_medium"></div>
+        <template if:true={accounts}>
+            <template for:each={accounts} for:item="account">
+                <div key={account.Id} class="slds-box slds-box_x-medium">
+                    <p  class="slds-p-around_small"> <strong>Id</strong>{account.Id}</p>
+                    <p  class="slds-p-around_small"> <strong>Name</strong>{account.Name}</p>
+                    <p  class="slds-p-around_small"><strong>Phone</strong>{account.Phone}</p>
+                    <p  class="slds-p-around_small"><strong>Industry</strong>{account.Industry}</p>
+                </div>
+                
+               
+            </template>
+        </template>
+        
+
+    </lightning-card>
+    
+</template>

@@ -1,0 +1,12 @@
+.custom-background {
+    background-color: #f4f6f9; /* Light background color */
+    padding: 1rem;
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.slds-list_dotted li {
+    padding-left: 1rem;
+    list-style-type: circle;
+    color: #4a4a4a; /* Text color */
+}

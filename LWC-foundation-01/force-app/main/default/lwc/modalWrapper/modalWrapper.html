@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Custom Modal">
+        <div class="slds-m-around_medium">
+            <lightning-button class="slds-button" variant="brand" label="Open Modal" onclick={openModal}></lightning-button>
+            <template if:true={showModal}>
+                <c-modal onclose={closeHandler}>
+                    <h1 slot="header">Header will come here </h1>
+                    <p >Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit officia. 
+                        Lorem aliqua enim laboris do dolor eiusmod officia. Mollit incididunt nisi consectetur esse
+                         laborum eiusmod pariatur proident. Eiusmod et adipisicing culpa deserunt nostrud
+                        ad veniam nulla aute est. Labore esse esse cupidatat amet velit id elit consequat minim
+                         ullamco mollit enim excepteur ea.</p>
+                    <div slot="footer">
+                        <button class="slds-button slds-button_neutral" aria-label="Cancel and close" onclick={closeHandler}>Cancel</button>
+                        <button class="slds-button slds-button_brand">Save</button>
+                        
+                    </div>
+                </c-modal>
+            </template>
+             
+        </div>
+    </lightning-card>
+</template>
